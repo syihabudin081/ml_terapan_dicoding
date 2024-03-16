@@ -95,7 +95,7 @@ Tahap exploratory data analysis dilakukan untuk memahami data yang digunakan dal
    - Pola Persebaran data tersebut memiliki korelasi positif. Hal ini ditandai dengan meningkatnya variabel pada sumbu y saat terjadi peningkatan variabel pada sumbu x
      
 - ![image](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/44234801-3b65-468d-bcb6-5c2d051d0975)
-    - grafik korelasi tersebut menunjukan bahwa semua fitur memiliki korelasi yang besar dengan fitur price, dimana menunjukan nilai diatas 0.97
+    - grafik korelasi tersebut menunjukan bahwa semua fitur memiliki korelasi yang besar dengan fitur close, dimana menunjukan nilai diatas 0.97
 
 - Menangani Outliers
 - ![image](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/71264bce-c736-408f-8f3a-e14978386347)
