@@ -1,23 +1,63 @@
 ## Laporan Proyek Machine Learning - Syihabudin Rahmat R
 
 ### Domain Proyek
-Proyek ini berfokus pada prediksi harga tukar USD/IDR menggunakan pendekatan machine learning dengan model LSTM (Long Short-Term Memory).
 
-### Business Understanding
+Proyek ini berada dalam bidang keuangan dan perdagangan mata uang. Masalah yang dihadapi adalah fluktuasi harga tukar USD/IDR yang sulit diprediksi secara akurat menggunakan metode konvensional. Fluktuasi harga tukar mata uang dapat dipengaruhi oleh berbagai faktor seperti kondisi ekonomi, kebijakan moneter, geopolitik, dan lain sebagainya. Prediksi yang akurat mengenai perubahan harga tukar mata uang dapat memberikan keuntungan bagi para pelaku pasar, termasuk investor, eksportir, dan importir.
 
-**Latar Belakang:**
-Pergerakan nilai tukar USD/IDR adalah aspek penting dalam ekonomi Indonesia. Prediksi pergerakan nilai tukar ini memiliki nilai strategis dalam pengambilan keputusan investasi dan manajemen risiko. Dengan menggunakan pendekatan machine learning, kita dapat mengembangkan model yang dapat memprediksi pergerakan harga tukar USD/IDR di masa depan dengan tingkat akurasi yang tinggi. Hal ini akan membantu para pelaku pasar dalam mengantisipasi perubahan pasar dan mengambil keputusan yang tepat secara finansial.
+### Urgensi Permasalahan
 
-**Problem Statements:**
-1. Bagaimana memprediksi pergerakan harga tukar USD/IDR di masa depan dengan tingkat akurasi yang tinggi?
-2. Apakah terdapat pola atau faktor tertentu yang secara signifikan mempengaruhi perubahan nilai tukar USD/IDR?
+Urgensinya permasalahan ini terletak pada pentingnya informasi yang akurat mengenai perubahan harga tukar mata uang bagi para pemangku kepentingan. Kenaikan atau penurunan harga tukar dapat memiliki dampak yang signifikan pada keputusan investasi, perencanaan bisnis, dan strategi perdagangan. Oleh karena itu, pengembangan model machine learning yang dapat memprediksi perubahan harga tukar dengan tingkat akurasi yang tinggi dapat membantu para pemangku kepentingan untuk mengambil keputusan yang lebih baik dan lebih informatif.
 
-**Goals:**
-1. Mengembangkan model machine learning yang dapat memprediksi pergerakan harga tukar USD/IDR dengan tingkat akurasi yang tinggi.
-2. Mengidentifikasi faktor-faktor utama yang mempengaruhi perubahan nilai tukar USD/IDR.
+### Latar Belakang
 
-**Solution Statement:**
-Untuk mencapai tujuan proyek, akan dikembangkan model machine learning menggunakan algoritma LSTM (Long Short-Term Memory) untuk memprediksi pergerakan harga tukar USD/IDR. Model akan dilatih dengan data historis dan dievaluasi menggunakan metrik Mean Absolute Error (MAE) untuk mengukur tingkat akurasi.
+Nilai tukar USD/IDR merupakan aspek penting dalam ekonomi Indonesia. Fluktuasi nilai tukar ini dapat berdampak signifikan pada berbagai sektor, seperti perdagangan internasional, investasi, dan stabilitas ekonomi secara keseluruhan. Kemampuan untuk memprediksi pergerakan nilai tukar USD/IDR dengan tingkat akurasi yang tinggi akan memberikan manfaat strategis bagi berbagai pihak, termasuk:
+
+- **Pelaku Pasar**: Investor, eksportir, importir, dan perusahaan multinasional dapat menggunakan prediksi nilai tukar untuk meminimalkan risiko dan memaksimalkan keuntungan dalam transaksi keuangan mereka.
+- **Pemerintah**: Bank Indonesia dan lembaga pemerintah lainnya dapat menggunakan prediksi nilai tukar untuk merumuskan kebijakan moneter dan fiskal yang tepat guna menjaga stabilitas ekonomi.
+- **Masyarakat Luas**: Prediksi nilai tukar dapat membantu masyarakat dalam membuat keputusan yang lebih tepat terkait dengan investasi, remitansi, dan kegiatan ekonomi lainnya yang melibatkan mata uang asing.
+
+### Contoh Penerapan Prediksi
+
+- Investor dapat menggunakan prediksi nilai tukar untuk menentukan waktu yang tepat untuk membeli atau menjual aset dalam mata uang asing.
+- Eksportir dapat menggunakan prediksi nilai tukar untuk menetapkan harga yang kompetitif dan meminimalkan risiko kerugian akibat fluktuasi nilai tukar.
+- Importir dapat menggunakan prediksi nilai tukar untuk mengoptimalkan biaya impor dan meminimalkan risiko fluktuasi nilai tukar.
+- Bank Indonesia dapat menggunakan prediksi nilai tukar untuk melakukan intervensi di pasar valuta asing dan menjaga stabilitas nilai tukar rupiah.
+
+### Problem Statement
+
+1. Model machine learning yang dapat memprediksi fluktuasi harga tukar USD/IDR, mengatasi kendala fluktuasi yang sulit diprediksi menggunakan metode konvensional?
+2. Seberapa akurat prediksi perubahan harga tukar USD/IDR yang dihasilkan oleh model machine learning yang dikembangkan?
+3. Bagaimana penerapan model machine learning dalam memprediksi perubahan harga tukar USD/IDR dapat memberikan manfaat strategis bagi berbagai pemangku kepentingan, seperti investor, eksportir, importir, pemerintah, dan masyarakat luas?
+
+### Goals
+
+1. Mengembangkan model machine learning yang mampu memprediksi fluktuasi harga tukar USD/IDR dengan tingkat akurasi yang tinggi, memanfaatkan data historis yang mempengaruhi pergerakan nilai tukar.
+2. Menyediakan prediksi perubahan harga tukar USD/IDR kepada para pemangku kepentingan, sehingga membantu mereka dalam pengambilan keputusan yang lebih baik terkait dengan investasi, perdagangan, dan kegiatan ekonomi lainnya.
+
+### Solusi
+
+Untuk mencapai tujuan proyek, akan dilakukan hal-hal berikut:
+
+1. **Eksplorasi Data (EDA)**:
+   - Analisis data historis harga tukar USD/IDR untuk memahami pola dan tren yang terkandung di dalamnya.
+   - Identifikasi faktor-faktor ekonomi, kebijakan moneter, dan geopolitik yang mempengaruhi fluktuasi harga tukar.
+
+2. **Pemilihan Model Machine Learning**:
+   - Memilih model Long Short-Term Memory (LSTM) untuk memodelkan hubungan temporal dalam data deret waktu harga tukar USD/IDR.
+   - LSTM dipilih karena kemampuannya dalam menangani ketergantungan jarak jauh dan memahami pola kompleks dalam data deret waktu.
+
+3. **Pelatihan Model**:
+   - Melatih model LSTM menggunakan data historis yang telah dipersiapkan, termasuk variabel tanggal, harga pembukaan, harga tertinggi, harga terendah, harga penutupan, dan volume perdagangan.
+   - Model akan diperbarui secara iteratif untuk mempelajari pola dan hubungan dalam data.
+
+4. **Evaluasi Model**:
+   - Model akan dievaluasi menggunakan metrik Mean Absolute Error (MAE) untuk mengukur seberapa dekat prediksi model dengan nilai sebenarnya dari harga tukar USD/IDR.
+   - Evaluasi akan dilakukan pada set data validasi untuk memastikan kinerja model secara objektif.
+
+5. **Optimisasi Model**:
+   - Jika hasil evaluasi menunjukkan kinerja yang kurang memuaskan, model akan dioptimalkan dengan menyesuaikan parameter, menambahkan fitur tambahan, atau mencoba arsitektur model yang lebih kompleks.
+
+Dengan demikian, proyek ini bertujuan untuk mengembangkan solusi yang dapat memberikan prediksi yang akurat dan bermanfaat terkait dengan perubahan harga tukar USD/IDR untuk berbagai pemangku kepentingan di bidang keuangan dan perdagangan mata uang.
 
 ### Data Understanding
 Data yang digunakan adalah dataset historis harga tukar USD/IDR dari Yahoo Finance. Dataset ini berisi informasi tanggal dan harga penutupan (close) dari perdagangan mata uang USD/IDR. Berikut adalah variabel atau fitur pada data tersebut:
@@ -35,45 +75,79 @@ Sumber dataset : https://finance.yahoo.com/quote/IDR%3DX/history
 Tahap exploratory data analysis dilakukan untuk memahami data yang digunakan dalam proyek. Beberapa tahapan yang dilakukan antara lain:
 
 - Deskripsi variabel: Memahami karakteristik data pada setiap variabel, seperti mean, median, dan distribusi.
+  ![image](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/f35fdfc9-02ef-4621-ba48-4e135c8e2506)
 - Penanganan nilai yang hilang: Mengidentifikasi dan menangani nilai yang hilang dalam dataset.
+- 
+  ![image](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/e37c6fa0-1e4a-4dd6-ba44-3bae4d1a2dd7)
 - Analisis univariat pada fitur numerik: Menganalisis distribusi dan statistik deskriptif dari setiap fitur numerik.
-- ![image](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/f0456a18-a04e-4e58-8783-6ef56f5e0657)
+  ![image](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/f0456a18-a04e-4e58-8783-6ef56f5e0657)
+   - Terlihat pada histogram distribusi data itu bahwa kurs idr/usd ini memiliki jumlah data yang banyak pada harga 14000 - 15000
 - Analisis multivariat pada fitur numerik: Mengeksplorasi hubungan antara beberapa fitur numerik.
-- ![image](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/f6b73b91-d21e-4517-b6ca-f0ec8346ef19)
+  ![image](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/f6b73b91-d21e-4517-b6ca-f0ec8346ef19)
+   - Pola Persebaran data tersebut memiliki korelasi positif. Hal ini ditandai dengan meningkatnya variabel pada sumbu y saat terjadi peningkatan variabel pada sumbu x
+     
 - ![image](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/44234801-3b65-468d-bcb6-5c2d051d0975)
-- Visualisasi data: Menggunakan boxplot dan grafik lainnya untuk memvisualisasikan distribusi dan tren dalam data, termasuk close average dari harga tukar USD/IDR.
+    - grafik korelasi tersebut menunjukan bahwa semua fitur memiliki korelasi yang besar dengan fitur price, dimana menunjukan nilai diatas 0.97
+
+- Menangani Outliers
 - ![image](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/71264bce-c736-408f-8f3a-e14978386347)
+  - Dari gambar tersebut dapat dilihat bahwa ada outlier pada feature 'Close', IQR Akan digunakan untuk mengatasi masalah ini 
+
+- Visualisasi data: memvisualisasikan distribusi dan tren dalam data, termasuk close average dari harga tukar USD/IDR.
 
 ![image](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/c95b2838-9e44-4879-bfca-66dc57f6a82d)
-
+  - Rata-rata harga pada kurs idr/usd terlihat cenderung meningkat naik
+    
 Dengan melakukan tahap-tahap ini, kita dapat memperoleh pemahaman yang mendalam tentang data dan persiapan yang tepat untuk membangun model prediksi.
 
 ### Data Preparation
-- Data dibersihkan dari nilai yang hilang.
-- Dilakukan penskalaan data menggunakan MinMaxScaler.
+
+Dalam tahap persiapan data, langkah-langkah yang lebih rinci dilakukan sebagai berikut:
+
+#### Handling Missing Values dan Outlier Menggunakan IQR
+
+Langkah pertama adalah menangani nilai-nilai yang hilang dari dataset. Dalam kasus ini, nilai yang hilang atau NA dihapus dari dataset. Selain itu, untuk mengatasi outlier, teknik IQR (Interquartile Range) digunakan. Nilai yang dianggap sebagai outlier diidentifikasi menggunakan IQR, dan baris yang mengandung outlier dihapus dari dataset.
+
+#### Scaling Data
+
+Setelah nilai-nilai yang hilang dan outlier telah ditangani, data dinormalisasi atau diskalakan untuk memastikan bahwa semua fitur memiliki skala yang seragam. Normalisasi data dilakukan untuk membuatnya berada dalam rentang antara 0 dan 1. Dengan melakukan normalisasi, perbedaan skala antar fitur tidak akan memengaruhi kinerja model.
+
+#### Split Data
+
+Data kemudian dibagi menjadi dua subset: data pelatihan dan data validasi. Data pelatihan digunakan untuk melatih model, sedangkan data validasi digunakan untuk menguji kinerja model yang telah dilatih. Pembagian ini umumnya dilakukan dengan proporsi tertentu, misalnya 80% data untuk pelatihan dan 20% untuk validasi.
+
+#### Membuat Dataset untuk Model LSTM
+
+Terakhir, data disiapkan dalam format yang sesuai untuk digunakan dalam model LSTM. Model LSTM memerlukan data dalam format deret waktu. Oleh karena itu, data harus diubah menjadi urutan waktu yang sesuai dengan konfigurasi model LSTM. Hal ini mungkin melibatkan mengonversi data menjadi urutan waktu yang tepat sesuai dengan jendela waktu yang dipilih untuk pengamatan.
+
+Dengan melakukan langkah-langkah di atas, data siap untuk digunakan dalam pelatihan model LSTM untuk memprediksi fluktuasi harga tukar USD/IDR. Proses persiapan data yang cermat sangat penting untuk memastikan keberhasilan model dalam mempelajari pola dari data dan membuat prediksi yang akurat.
 
 ### Modeling
-Model LSTM (Long Short-Term Memory) digunakan untuk melakukan prediksi. Arsitektur model terdiri dari dua lapisan LSTM dan beberapa lapisan Dense.
+Model yang digunakan dalam kode ini adalah model jaringan saraf tiruan (neural network) berbasis LSTM (Long Short-Term Memory). LSTM adalah tipe khusus dari jaringan saraf rekuren (RNN) yang dirancang untuk menangani masalah serial, seperti data time series, dengan mengatasi masalah pelatihan jaringan RNN biasa yang rentan terhadap vanishing gradient.
 
-**Kelebihan dan Kekurangan Algoritma LSTM:**
-**Kelebihan:**
-- LSTM (Long Short-Term Memory) cocok untuk memodelkan data time series yang kompleks karena dapat mengingat informasi jangka panjang.
-- Dapat menangani masalah vanishing gradient dengan baik, sehingga cocok untuk data dengan jarak waktu yang panjang.
-- Memiliki arsitektur yang dapat mempertahankan informasi dari waktu sebelumnya, sehingga efektif untuk memprediksi pergerakan harga tukar yang berkaitan dengan pola dan tren masa lalu.
+#### Mengapa menggunakan LSTM?
+1. **Kemampuan Memahami Data Sequential**: LSTM memiliki kemampuan untuk memahami dan mengingat informasi yang berurutan dari data time series dalam jangka waktu yang lebih panjang.
+2. **Mengatasi Masalah Vanishing Gradient**: LSTM memiliki mekanisme gerbang (gate) yang memungkinkannya untuk mengontrol aliran informasi, sehingga mengatasi masalah vanishing gradient yang sering terjadi pada jaringan rekuren tradisional.
+3. **Penanganan Data Time Series**: LSTM secara alami cocok untuk menangani data time series karena strukturnya yang mempertahankan memori jangka panjang.
 
-**Kekurangan:**
-- Memiliki kompleksitas komputasi yang tinggi, sehingga memerlukan sumber daya komputasi yang cukup besar.
-- Rentan terhadap overfitting, terutama pada dataset kecil atau ketika model memiliki banyak parameter.
+#### Sequential Model vs. LSTM Layer
+- Model yang digunakan dalam kode adalah model Sequential, yang merupakan tumpukan linear dari lapisan-lapisan yang dapat disusun secara berurutan. LSTM digunakan sebagai lapisan dalam model Sequential tersebut.
+- LSTM yang digunakan dalam model Sequential adalah jenis lapisan khusus yang dirancang untuk menangani data serial dan memiliki kemampuan untuk mempertahankan informasi dari masa lalu dalam jangka waktu yang lama.
 
-**Improvement dengan Hyperparameter Tuning:**
-Pada tahap improvement, dilakukan tuning terhadap hyperparameter model LSTM untuk meningkatkan performa dan akurasi prediksi. Beberapa hyperparameter yang dioptimalkan meliputi:
-- Jumlah unit LSTM: Menentukan jumlah unit atau neuron dalam lapisan LSTM.
-- Jumlah lapisan LSTM: Menentukan jumlah lapisan LSTM yang digunakan dalam arsitektur model.
-- Learning rate: Menentukan tingkat pembelajaran yang optimal untuk proses training model.
-- Batch size: Menentukan jumlah sampel yang digunakan dalam satu iterasi training.
+#### Parameter yang Digunakan:
+1. **Jumlah Unit LSTM**: Dalam kode, setiap lapisan LSTM memiliki 60 unit. Ini menentukan jumlah unit dalam lapisan LSTM, yang merupakan dimensi ruang output untuk lapisan tersebut.
+2. **Jumlah Neuron pada Dense Layers**: Ada tiga lapisan Dense yang digunakan setelah LSTM. Masing-masing memiliki jumlah neuron berturut-turut 30, 10, dan 1.
+3. **Optimizer**: Stochastic Gradient Descent (SGD) digunakan sebagai optimizer dengan learning rate sebesar 1.0000e-04 dan momentum 0.9.
+4. **Loss Function**: Huber loss digunakan sebagai fungsi kerugian (loss function) dalam pelatihan model. Huber loss adalah kombinasi dari MSE (Mean Squared Error) dan MAE (Mean Absolute Error), yang memberikan bobot yang lebih rendah untuk outlier.
+5. **Metrik**: MAE (Mean Absolute Error) dipilih sebagai metrik untuk mengukur kinerja model selama pelatihan.
 
-Proses hyperparameter tuning dilakukan dengan mencoba berbagai kombinasi nilai hyperparameter dan memilih kombinasi yang memberikan hasil terbaik berdasarkan metrik evaluasi yang ditetapkan.
+#### Hyperparameter Tuning:
+- `epochs`: Jumlah epoch yang digunakan untuk pelatihan model.
+- `batch_size`: Jumlah sampel yang akan digunakan dalam satu iterasi pelatihan.
+- `patience` (pada callback EarlyStopping): Jumlah epoch yang akan ditunggu sebelum pelatihan dihentikan jika tidak ada peningkatan dalam metrik validasi.
+- Lainnya: Parameter lain seperti jumlah unit dalam lapisan LSTM, jumlah neuron dalam lapisan Dense, dll.
 
+Secara keseluruhan, model LSTM dipilih karena kemampuannya untuk menangani data time series dan mengatasi masalah yang sering terjadi pada jaringan rekuren tradisional, sementara parameter dan hyperparameter dipilih berdasarkan eksperimen untuk mencapai kinerja yang baik pada dataset yang diberikan
 **Plot Loss dan Akurasi**
 - ![image](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/cdaa0699-2cf8-4228-9fa6-a8d3c637ee94)
 
