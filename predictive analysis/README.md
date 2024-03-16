@@ -31,7 +31,7 @@ Nilai tukar USD/IDR merupakan aspek penting dalam ekonomi Indonesia. Fluktuasi n
 
 ### Goals
 
-1. Mengembangkan model machine learning yang mampu memprediksi fluktuasi harga tukar USD/IDR dengan tingkat akurasi yang tinggi, memanfaatkan data historis yang mempengaruhi pergerakan nilai tukar.
+1. Mengembangkan model machine learning yang mampu memprediksi fluktuasi harga tukar USD/IDR dengan hasil evaluasi yang baik, memanfaatkan data historis yang mempengaruhi pergerakan nilai tukar.
 2. Menyediakan prediksi perubahan harga tukar USD/IDR kepada para pemangku kepentingan, sehingga membantu mereka dalam pengambilan keputusan yang lebih baik terkait dengan investasi, perdagangan, dan kegiatan ekonomi lainnya.
 
 ### Solusi
@@ -61,6 +61,14 @@ Dengan demikian, proyek ini bertujuan untuk mengembangkan solusi yang dapat memb
 
 ### Data Understanding
 Data yang digunakan adalah dataset historis harga tukar USD/IDR dari Yahoo Finance. Dataset ini berisi informasi tanggal dan harga penutupan (close) dari perdagangan mata uang USD/IDR. Berikut adalah variabel atau fitur pada data tersebut:
+
+|index|Date|Open|High|Low|Close|Adj Close|Volume|
+|---|---|---|---|---|---|---|---|
+|0|2019-03-18|14251\.0|14283\.0|14204\.0|14251\.0|14251\.0|0\.0|
+|1|2019-03-19|14246\.0|14252\.0|14163\.0|14251\.0|14251\.0|0\.0|
+|2|2019-03-20|14224\.0|14233\.299805|14159\.0|14223\.0|14223\.0|0\.0|
+|3|2019-03-21|14115\.5|14159\.0|14055\.0|14055\.0|14055\.0|0\.0|
+|4|2019-03-22|14152\.5|14279\.0|14120\.0|14133\.0|14133\.0|0\.0|
 
 - Date: Tanggal pencatatan data.
 - Open: Harga pembukaan perdagangan USD/IDR.
@@ -148,24 +156,34 @@ Model yang digunakan dalam kode ini adalah model jaringan saraf tiruan (neural n
 - Lainnya: Parameter lain seperti jumlah unit dalam lapisan LSTM, jumlah neuron dalam lapisan Dense, dll.
 
 Secara keseluruhan, model LSTM dipilih karena kemampuannya untuk menangani data time series dan mengatasi masalah yang sering terjadi pada jaringan rekuren tradisional, sementara parameter dan hyperparameter dipilih berdasarkan eksperimen untuk mencapai kinerja yang baik pada dataset yang diberikan
-**Plot Loss dan Akurasi**
-- ![image](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/cdaa0699-2cf8-4228-9fa6-a8d3c637ee94)
 
 ### Evaluation
-**Metrik Evaluasi yang Digunakan:**
-Dalam proyek ini, kami menggunakan metrik evaluasi Mean Absolute Error (MAE) untuk mengevaluasi kinerja model dalam memprediksi harga tukar USD/IDR. MAE mengukur rata-rata dari selisih absolut antara nilai prediksi dan nilai sebenarnya.
+
+**Metrik Evaluasi MAE (Mean Absolute Error):** 
+Metrik Evaluasi MAE digunakan untuk mengevaluasi seberapa dekat prediksi model dengan nilai sebenarnya dari harga tukar USD/IDR. MAE mengukur rata-rata dari selisih absolut antara nilai prediksi dan nilai sebenarnya. Dengan demikian, hasil MAE yang lebih rendah menunjukkan kinerja model yang lebih baik dalam memprediksi perubahan harga tukar.
 
 Formula untuk MAE adalah:
 
 MAE = (1/n) Σ(i=1 to n) |y_i – ŷ_i|
-
 
 **Hasil Proyek Berdasarkan Metrik Evaluasi:**
 Setelah melakukan evaluasi menggunakan metrik MAE, kami memperoleh hasil sebagai berikut:
 - Mean Absolute Error: 0.0277
 - Threshold MAE: 0.1
 
-**Plot harga aktual dan harga prediksi**
-![image](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/05237876-d8f9-4b70-846a-89e3613c300b)
+Dalam konteks hasil nilai MAE sebesar 0.0277, hal ini menunjukkan bahwa rata-rata kesalahan prediksi model adalah sekitar 0.0277. Artinya, rata-rata selisih antara harga tukar yang diprediksi oleh model dengan harga tukar yang sebenarnya adalah sekitar 0.0277. Ini adalah ukuran yang relatif rendah, menunjukkan bahwa model telah mampu memprediksi fluktuasi harga tukar USD/IDR dengan tingkat akurasi yang baik.
 
-Dari hasil tersebut, dapat disimpulkan bahwa model kami mampu memprediksi pergerakan harga tukar USD/IDR
+Threshold MAE yang dipakai (0.1) adalah batas yang telah ditetapkan untuk menentukan seberapa baik kinerja model. Jika MAE melebihi threshold ini, dapat dianggap bahwa model tidak cukup akurat. Dalam konteks ini, dengan threshold sebesar 0.1, nilai MAE sebesar 0.0277 jelas jauh di bawah batas tersebut, menunjukkan bahwa model telah memberikan prediksi yang memuaskan dan dapat diandalkan.
+
+**Plot Loss dan Akurasi:**
+- ![Plot Loss dan Akurasi](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/cdaa0699-2cf8-4228-9fa6-a8d3c637ee94)
+  - Plot Loss dan akurasi juga menunjukan hasil yang baik atau bisa dibilang well fitting
+
+**Plot Harga Aktual dan Harga Prediksi:**
+- ![Plot Harga Aktual dan Harga Prediksi](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/05237876-d8f9-4b70-846a-89e3613c300b) 
+  - Hasil prediksi juga menunjukan hasil yang baik dan memiliki selisih yang sangat sedikit dibandingkan dengan harga aktual
+
+Secara praktis, hasil metrik evaluasi tersebut menunjukkan bahwa model yang dikembangkan telah memberikan prediksi harga tukar USD/IDR yang cukup akurat. Hal ini memiliki dampak positif bagi berbagai pemangku kepentingan seperti investor, eksportir, importir, pemerintah, dan masyarakat luas. Mereka dapat menggunakan prediksi ini untuk mengambil keputusan yang lebih baik terkait dengan investasi, perdagangan, dan kegiatan ekonomi lainnya.
+
+Dalam konteks goals dan solusi proyek, hasil evaluasi ini menunjukkan bahwa model LSTM yang dikembangkan berhasil mencapai tujuan proyek. Model ini dapat memprediksi fluktuasi harga tukar USD/IDR dengan hasil evaluasi yang baik, sesuai dengan yang diharapkan. Oleh karena itu, proyek ini dapat dianggap berhasil karena mampu memberikan solusi yang bermanfaat sesuai dengan problem statement yang diajukan.
+
