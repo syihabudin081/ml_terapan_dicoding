@@ -20,7 +20,7 @@ Pergerakan nilai tukar USD/IDR adalah aspek penting dalam ekonomi Indonesia. Pre
 Untuk mencapai tujuan proyek, akan dikembangkan model machine learning menggunakan algoritma LSTM (Long Short-Term Memory) untuk memprediksi pergerakan harga tukar USD/IDR. Model akan dilatih dengan data historis dan dievaluasi menggunakan metrik Mean Absolute Error (MAE) untuk mengukur tingkat akurasi.
 
 ### Data Understanding
-Data yang digunakan adalah dataset historis harga tukar USD/IDR. Dataset ini berisi informasi tanggal dan harga penutupan (close) dari perdagangan mata uang USD/IDR. Berikut adalah variabel atau fitur pada data tersebut:
+Data yang digunakan adalah dataset historis harga tukar USD/IDR dari Yahoo Finance. Dataset ini berisi informasi tanggal dan harga penutupan (close) dari perdagangan mata uang USD/IDR. Berikut adalah variabel atau fitur pada data tersebut:
 
 - Date: Tanggal pencatatan data.
 - Open: Harga pembukaan perdagangan USD/IDR.
@@ -28,6 +28,8 @@ Data yang digunakan adalah dataset historis harga tukar USD/IDR. Dataset ini ber
 - Low: Harga terendah yang dicapai dalam perdagangan USD/IDR pada tanggal tersebut.
 - Close: Harga penutupan perdagangan USD/IDR pada tanggal tersebut.
 - Volume: Volume perdagangan total USD/IDR pada tanggal tersebut.
+
+Sumber dataset : https://finance.yahoo.com/quote/IDR%3DX/history
 
 ### Exploratory Data Analysis (EDA)
 Tahap exploratory data analysis dilakukan untuk memahami data yang digunakan dalam proyek. Beberapa tahapan yang dilakukan antara lain:
