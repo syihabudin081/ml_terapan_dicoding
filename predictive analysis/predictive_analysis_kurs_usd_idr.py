@@ -40,6 +40,14 @@ import matplotlib.pyplot as plt
 sns.boxplot(x=data['Close'])
 plt.show()
 
+Q1 = data.quantile(0.25)
+Q3 = data.quantile(0.75)
+IQR=Q3-Q1
+data=data[~((data<(Q1-1.5*IQR))|(data>(Q3+1.5*IQR))).any(axis=1)]
+
+# Cek ukuran dataset setelah kita drop outliers
+data.shape
+
 data.hist(bins=50, figsize=(20,15))
 plt.show()
 
@@ -110,6 +118,17 @@ plt.ylabel('Loss')
 plt.legend()
 plt.show()
 
+# Prediksi menggunakan model
+predictions = model.predict(X_val)
+
+# Menghitung MAE
+mae = np.mean(np.abs(predictions - y_val))
+print("Mean Absolute Error:", mae)
+
+# Menghitung threshold untuk MAE < 10% skala data
+threshold_mae = (scaled_data.max() - scaled_data.min()) * 10/100
+print("Threshold MAE:", threshold_mae)
+
 # Invers scaling untuk mendapatkan harga aktual dan prediksi yang sebenarnya
 actual_prices = scaler.inverse_transform(y_val.reshape(-1, 1))
 predicted_prices = scaler.inverse_transform(predictions)
@@ -123,17 +142,6 @@ plt.xlabel('Time')
 plt.ylabel('Price')
 plt.legend()
 plt.show()
-
-# Prediksi menggunakan model
-predictions = model.predict(X_val)
-
-# Menghitung MAE
-mae = np.mean(np.abs(predictions - y_val))
-print("Mean Absolute Error:", mae)
-
-# Menghitung threshold untuk MAE < 10% skala data
-threshold_mae = (scaled_data.max() - scaled_data.min()) * 10/100
-print("Threshold MAE:", threshold_mae)
 
 from datetime import datetime, timedelta
 
