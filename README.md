@@ -1,4 +1,4 @@
-# Sistem Rekomendasi Anime menggunakan Content-Based Filtering
+![image](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/b7d66e64-e50f-4a51-a30c-d442caebdf7f)# Sistem Rekomendasi Anime menggunakan Content-Based Filtering
 
 ## Deskripsi Proyek
 
@@ -187,3 +187,117 @@ Grafik tersebut menunjukkan distribusi rating dari anime.
 
 Grafik tersebut menampilkan distribusi jenis anime, di mana jenis TV paling banyak ditemui.
 
+### Data Preprocessing
+
+# Count anime rating contribution
+
+|anime\_id|user\_id|rating|
+|---|---|---|
+|1|15509|15509|
+|5|6927|6927|
+|6|11077|11077|
+
+# Menggabungkan table anime rating contribution dengan dataframe anime berdasarkan anime_id
+
+|index|anime\_id|user\_id|rating|name|genre|
+|---|---|---|---|---|---|
+|0|1|15509|15509|Cowboy Bebop|Action, Adventure, Comedy, Drama, Sci-Fi, Space|
+|1|5|6927|6927|Cowboy Bebop: Tengoku no Tobira|Action, Drama, Mystery, Sci-Fi, Space|
+|2|6|11077|11077|Trigun|Action, Comedy, Sci-Fi|
+|3|7|2629|2629|Witch Hunter Robin|Action, Drama, Magic, Mystery, Police, Supernatural|
+|4|8|413|413|Beet the Vandel Buster|Adventure, Fantasy, Shounen, Supernatural|
+|5|15|2424|2424|Eyeshield 21|Action, Comedy, Shounen, Sports|
+|6|16|3890|3890|Hachimitsu to Clover|Comedy, Drama, Josei, Romance|
+|7|17|650|650|Hungry Heart: Wild Striker|Comedy, Shounen, Slice of Life, Sports|
+|8|18|1911|1911|Initial D Fourth Stage|Action, Cars, Drama, Seinen, Sports|
+|9|19|4594|4594|Monster|Drama, Horror, Mystery, Police, Psychological, Seinen, Thriller|
+
+### Data Preparation
+
+Pada tahap ini, dilakukan proses pembersihan data (data cleaning) dengan menggunakan fungsi `dropna()` untuk menghapus baris yang mengandung nilai yang hilang (missing value) dari dataset. Tujuan dari langkah ini adalah untuk memastikan bahwa dataset yang digunakan dalam analisis selanjutnya bebas dari nilai yang hilang, sehingga tidak mempengaruhi hasil analisis.
+
+![Missing Value Handling](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/7cbf2998-25a0-4d43-ac84-9043171e4be4)
+
+Proses pembersihan ini diperlukan untuk memastikan keakuratan dan konsistensi data sebelum dilakukan analisis lebih lanjut. Dengan menghapus baris yang mengandung nilai yang hilang, dataset menjadi lebih bersih dan siap untuk digunakan dalam proses analisis dan pemodelan.
+
+### Content Based Filtering Modelling & Result 
+
+![image](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/b6abcff9-a457-47ca-8cd4-15bbf851dd2d)
+
+Content-based filtering adalah salah satu metode dalam sistem rekomendasi yang menghasilkan rekomendasi berdasarkan kesamaan fitur atau konten antara item yang telah disukai oleh pengguna dengan item lainnya. Pendekatan ini menggunakan informasi terperinci tentang item itu sendiri untuk membuat rekomendasi yang sesuai dengan preferensi pengguna.
+
+### Pemilihan Content-Based Filtering untuk Sistem Rekomendasi Anime
+
+Pemilihan pendekatan content-based filtering untuk sistem rekomendasi anime didasarkan pada beberapa pertimbangan yang meliputi:
+
+#### Alasan Pemilihan Content-Based Filtering:
+
+1. **Ketersediaan Data Rating yang Terbatas**: Dataset anime terkadang memiliki keterbatasan dalam hal data rating dari pengguna. Dalam kasus seperti ini, menggunakan metode content-based filtering lebih tepat karena tidak memerlukan data peringkat dari pengguna lain.
+
+2. **Karakteristik Anime yang Jelas**: Anime memiliki beragam fitur dan karakteristik yang dapat dijadikan dasar untuk membuat rekomendasi, seperti genre, tema, studio pembuat, dan sebagainya. Dengan menggunakan content-based filtering, sistem dapat mengeksplorasi karakteristik ini untuk membuat rekomendasi yang lebih relevan.
+
+3. **Personalisasi yang Tinggi**: Penggemar anime sering memiliki preferensi yang sangat spesifik, seperti genre atau tema favorit. Content-based filtering memungkinkan sistem untuk membuat rekomendasi yang lebih sesuai dengan preferensi unik dari setiap pengguna berdasarkan pada karakteristik anime yang mereka sukai.
+
+#### Kelebihan Content-Based Filtering:
+
+- **Personalisasi yang Tinggi**: Memungkinkan personalisasi yang tinggi dalam rekomendasi karena berfokus pada preferensi pengguna berdasarkan fitur-fitur yang mereka sukai dari anime sebelumnya.
+
+- **Tidak Bergantung pada Data Eksternal**: Tidak memerlukan data eksternal seperti peringkat atau ulasan pengguna lainnya, membuatnya lebih mandiri dan dapat diterapkan dalam skenario di mana data eksternal tidak tersedia.
+
+- **Rekomendasi yang Jelas dan Interpretabel**: Menghasilkan rekomendasi yang lebih jelas dan mudah diinterpretasikan oleh pengguna karena berdasarkan pada fitur-fitur yang dapat dijelaskan seperti genre, tema, dan karakteristik lainnya.
+
+#### Kekurangan Content-Based Filtering:
+
+- **Keterbatasan Dalam Variasi Rekomendasi**: Cenderung membatasi variasi rekomendasi karena hanya merekomendasikan anime dengan fitur serupa dengan yang telah disukai oleh pengguna sebelumnya.
+
+- **Keterbatasan dalam Menemukan Item Baru**: Kurang efektif dalam menemukan item baru atau yang tidak sering dilihat oleh pengguna karena fokus pada fitur-fitur yang sudah dikenal oleh sistem.
+
+- **Over-Spesialisasi**: Kadang-kadang menghasilkan rekomendasi yang terlalu spesifik atau tidak mencukupi karena terlalu berfokus pada fitur-fitur tertentu dari anime yang telah disukai pengguna.
+
+Dengan mempertimbangkan kelebihan personalisasi, ketersediaan data, dan karakteristik anime, content-based filtering menjadi pilihan yang tepat untuk sistem rekomendasi anime dalam kasus-kasus di mana data rating pengguna terbatas atau tidak tersedia dalam jumlah yang cukup besar.
+
+### TF-IDF Vectorizer
+
+Pada tahap ini, TF-IDF (Term Frequency-Inverse Document Frequency) Vectorizer digunakan untuk membangun sistem rekomendasi sederhana berdasarkan genre anime. Teknik ini digunakan untuk menemukan representasi fitur penting dari setiap kategori anime. Berikut adalah langkah-langkah yang dilakukan:
+
+1. **Melakukan Fit dan Transformasi**: Dilakukan fitting TF-IDF Vectorizer pada data genre anime untuk menghasilkan representasi vektor TF-IDF dari setiap genre. Proses ini mengubah teks genre menjadi vektor numerik berdasarkan frekuensi kata dalam setiap genre dan frekuensi invers dokumen di seluruh dataset.
+
+2. **Mengubah Vektor ke Bentuk Matriks**: Hasil dari fitting dan transformasi adalah vektor TF-IDF untuk setiap genre anime. Kemudian, vektor tersebut diubah ke dalam bentuk matriks menggunakan fungsi `todense()` agar dapat dianalisis lebih lanjut.
+
+3. **Membuat DataFrame**: Dibuatlah DataFrame untuk melihat matriks TF-IDF. Kolom DataFrame diisi dengan genre anime, sedangkan barisnya diisi dengan nama anime. Ini membantu untuk memvisualisasikan representasi TF-IDF untuk setiap anime.
+
+![TF-IDF Matrix](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/24a99da8-93c1-47e0-ac79-16e8b8544e74)
+
+### Cosine Similarity
+
+Pada tahap ini, dilakukan perhitungan derajat kesamaan (similarity degree) antar anime menggunakan teknik cosine similarity. Proses ini memungkinkan untuk merekomendasikan daftar anime yang mirip dengan anime yang telah disukai oleh pengguna. Berikut adalah langkah-langkahnya:
+
+1. **Perhitungan Cosine Similarity**: Menggunakan fungsi `cosine_similarity` dari library sklearn untuk menghitung cosine similarity antara vektor representasi TF-IDF dari setiap pasang anime. Cosine similarity mengukur seberapa mirip dua vektor berdasarkan sudut kosinus di antara keduanya.
+
+2. **Rekomendasi Anime yang Mirip**: Dengan menggunakan data similarity yang diperoleh, direkomendasikan daftar anime yang memiliki kesamaan tertinggi dengan anime yang telah disukai oleh pengguna. Semakin tinggi nilai cosine similarity antara dua anime, semakin mirip kedua anime tersebut.
+
+![Cosine Similarity](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/50cfd6b5-56b3-4b8d-a13d-c912d9371b16)
+
+Dengan menggunakan TF-IDF Vectorizer dan Cosine Similarity, sistem rekomendasi anime yang sederhana namun efektif dapat dibangun berdasarkan genre anime yang disukai oleh pengguna. Metode ini memungkinkan untuk merekomendasikan anime yang memiliki kesamaan fitur dengan anime favorit pengguna, sehingga meningkatkan pengalaman pengguna dalam menemukan konten yang sesuai dengan preferensi mereka.
+
+### Result
+
+#### Mendapatkan Rekomendasi
+
+Setelah kita memiliki data similarity (kesamaan) antar anime, saatnya untuk menghasilkan sejumlah anime yang akan direkomendasikan kepada pengguna. Rekomendasi anime ini didasarkan pada kesamaan yang dihitung dengan cosine similarity pada tahap sebelumnya. Dengan menggunakan data kesamaan ini, sistem dapat merekomendasikan daftar anime yang mirip (similar) dengan anime yang telah disukai oleh pengguna sebelumnya. Proses ini memungkinkan pengguna untuk menemukan anime baru yang mungkin sesuai dengan preferensi mereka berdasarkan pada anime yang telah mereka sukai sebelumnya.
+
+Contohnya Kita ingin mendapatkan rekomendasi terkait dengan anime yang mirip dengan tokyo ghoul
+
+|index|id|anime\_name|genre|
+|---|---|---|---|
+|8625|22319|Tokyo Ghoul|Action, Drama, Horror, Mystery, Psychological, Seinen, Supernatural|
+
+Maka Sistem akan merekomendasikan 5 anime yang mirip dengan tokyo ghoul
+
+|index|anime\_name|genre|
+|---|---|---|
+|0|Tokyo Ghoul √A|Action, Drama, Horror, Mystery, Psychological, Seinen, Supernatural|
+|1|Tokyo Ghoul: &quot;Pinto&quot;|Action, Drama, Horror, Mystery, Psychological, Supernatural|
+|2|Night Head Genesis|Drama, Horror, Mystery, Psychological, Supernatural|
+|3|Elfen Lied|Action, Drama, Horror, Psychological, Romance, Seinen, Supernatural|
+|4|Jigoku Shoujo|Horror, Mystery, Psychological, Supernatural|
