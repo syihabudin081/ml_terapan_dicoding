@@ -1,6 +1,8 @@
-![image](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/b7d66e64-e50f-4a51-a30c-d442caebdf7f)# Sistem Rekomendasi Anime menggunakan Content-Based Filtering
+# Sistem Rekomendasi Anime Menggunakan Content-Based Filtering
 
 ## Deskripsi Proyek
+
+![image](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/1c3081c5-0b81-4203-b2f6-069c13810770)
 
 Proyek ini bertujuan untuk mengembangkan sebuah sistem rekomendasi anime menggunakan metode content-based filtering. Sistem ini akan merekomendasikan anime kepada pengguna berdasarkan kesamaan konten atau fitur antara anime yang disukai oleh pengguna dengan anime lainnya. Dengan menggunakan teknik ini, sistem dapat merekomendasikan anime yang memiliki karakteristik atau elemen serupa dengan anime favorit pengguna.
 
@@ -12,12 +14,19 @@ Urgensinya proyek ini terletak pada pentingnya memberikan rekomendasi yang relev
 
 Anime merupakan bentuk hiburan yang sangat populer di kalangan berbagai kelompok usia dan budaya. Dengan jumlah judul yang terus bertambah setiap tahunnya, pengguna sering kali mengalami kesulitan dalam menemukan anime yang sesuai dengan minat dan preferensi mereka. Oleh karena itu, pengembangan sistem rekomendasi anime dapat memberikan solusi untuk masalah tersebut dengan memberikan rekomendasi yang personal dan relevan kepada pengguna.
 
+## Problem Statement
+
+Dengan pertumbuhan yang pesat dalam jumlah judul anime yang tersedia, pengguna sering kali menghadapi kesulitan dalam menemukan anime yang sesuai dengan preferensi dan minat mereka. Masalah utama yang dihadapi adalah kurangnya rekomendasi yang personal dan relevan, yang dapat menyebabkan pengguna menghabiskan waktu berharga untuk mencari anime baru yang sesuai dengan selera mereka.
+
+Selain itu, kebanyakan sistem rekomendasi yang tersedia cenderung mengandalkan data demografis pengguna atau perilaku interaksi sebelumnya, tanpa memperhitungkan karakteristik atau fitur konten dari anime yang disukai. Hal ini dapat menyebabkan rekomendasi yang kurang akurat dan kurang memuaskan bagi pengguna.
+
+Oleh karena itu, diperlukan sebuah sistem rekomendasi anime yang dapat memberikan rekomendasi yang personal dan relevan kepada pengguna berdasarkan karakteristik atau fitur konten dari anime yang disukai oleh pengguna. Dengan demikian, pengguna akan lebih mudah menemukan anime baru yang sesuai dengan minat dan preferensi mereka, meningkatkan pengalaman hiburan mereka secara keseluruhan.
+
 ## Goals
 
 1. Mengembangkan sistem rekomendasi anime yang menggunakan content-based filtering.
 2. Menganalisis dan mengekstrak fitur atau karakteristik dari anime, seperti genre, tema, dan rating.
 3. Membangun model yang dapat merekomendasikan anime berdasarkan kesamaan fitur dengan anime favorit pengguna.
-4. Mengimplementasikan sistem rekomendasi dalam bentuk aplikasi atau platform yang user-friendly dan dapat diakses oleh pengguna.
 
 ## Solusi
 
@@ -38,6 +47,7 @@ Untuk mencapai tujuan proyek, langkah-langkah berikut akan dilakukan:
 3. [Building a Content-Based Movie Recommendation Engine - Real Python](https://realpython.com/build-recommendation-engine-collaborative-filtering/)
 4. [Introduction to Recommender Systems - Analytics Vidhya](https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-recommendation-engine-python/)
 5. [An Introduction to Anime and Why It's Worth Your Time - Collider](https://collider.com/what-is-anime-explained/)
+6. [Based Filtering Methods in Anime Recommendation Systems](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwihxPeZv_6EAxXy9zgGHZcZCMgQFnoECDUQAQ&url=https%3A%2F%2Fjournal.unimma.ac.id%2Findex.php%2Fkomtika%2Farticle%2Fdownload%2F9219%2F4657%2F&usg=AOvVaw2RL_6RvwrksuYvLzPw_Lb5&opi=89978449)
 
 ## Data Understanding
 Data yang digunakan adalah dataset  dengan judul [Anime Recommendations Database](https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fwww.kaggle.com%2Fdatasets%2FCooperUnion%2Fanime-recommendations-database) yang diambil dari kaggle 
@@ -284,20 +294,39 @@ Dengan menggunakan TF-IDF Vectorizer dan Cosine Similarity, sistem rekomendasi a
 
 #### Mendapatkan Rekomendasi
 
-Setelah kita memiliki data similarity (kesamaan) antar anime, saatnya untuk menghasilkan sejumlah anime yang akan direkomendasikan kepada pengguna. Rekomendasi anime ini didasarkan pada kesamaan yang dihitung dengan cosine similarity pada tahap sebelumnya. Dengan menggunakan data kesamaan ini, sistem dapat merekomendasikan daftar anime yang mirip (similar) dengan anime yang telah disukai oleh pengguna sebelumnya. Proses ini memungkinkan pengguna untuk menemukan anime baru yang mungkin sesuai dengan preferensi mereka berdasarkan pada anime yang telah mereka sukai sebelumnya.
+Setelah melakukan perhitungan similarity antar anime menggunakan cosine similarity, langkah selanjutnya adalah menghasilkan rekomendasi anime kepada pengguna. Rekomendasi ini didasarkan pada tingkat kesamaan antar anime yang telah dihitung sebelumnya. Dengan menggunakan data kesamaan ini, sistem dapat merekomendasikan daftar anime yang mirip dengan anime yang telah disukai oleh pengguna sebelumnya. Proses ini memungkinkan pengguna untuk menemukan anime baru yang mungkin sesuai dengan preferensi mereka berdasarkan pada anime yang telah mereka sukai sebelumnya.
 
-Contohnya Kita ingin mendapatkan rekomendasi terkait dengan anime yang mirip dengan tokyo ghoul
+Sebagai contoh, kita ingin mendapatkan rekomendasi terkait dengan anime yang mirip dengan Gintama:
 
-|index|id|anime\_name|genre|
-|---|---|---|---|
-|8625|22319|Tokyo Ghoul|Action, Drama, Horror, Mystery, Psychological, Seinen, Supernatural|
+| Index | ID   | Anime Name                              | Genre                                            |
+|-------|------|-----------------------------------------|--------------------------------------------------|
+| 9832  | 28977| Gintama°                                | Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen |
 
-Maka Sistem akan merekomendasikan 5 anime yang mirip dengan tokyo ghoul
+Maka sistem akan merekomendasikan 5 anime yang mirip dengan Gintama:
 
-|index|anime\_name|genre|
-|---|---|---|
-|0|Tokyo Ghoul √A|Action, Drama, Horror, Mystery, Psychological, Seinen, Supernatural|
-|1|Tokyo Ghoul: &quot;Pinto&quot;|Action, Drama, Horror, Mystery, Psychological, Supernatural|
-|2|Night Head Genesis|Drama, Horror, Mystery, Psychological, Supernatural|
-|3|Elfen Lied|Action, Drama, Horror, Psychological, Romance, Seinen, Supernatural|
-|4|Jigoku Shoujo|Horror, Mystery, Psychological, Supernatural|
+| Index | Anime Name                                     | Genre                                            |
+|-------|------------------------------------------------|--------------------------------------------------|
+| 0     | Gintama Movie: Kanketsu-hen - Yorozuya yo Eien Nare | Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen |
+| 1     | Gintama Movie: Shinyaku Benizakura-hen        | Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen |
+| 2     | Gintama: Jump Festa 2014 Special              | Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen |
+| 3     | Gintama: Yorinuki Gintama-san on Theater 2D   | Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen |
+| 4     | Gintama'                                       | Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen |
+
+### Evaluasi
+
+Untuk evaluasi, menggunakan metrik precision yang dirumuskan sebagai berikut:
+
+![Presisi (P) = Jumlah rekomendasi yang relevan / Jumlah item yang direkomendasikan](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/664195d3-3a82-42a7-bc8a-ef2f36ac1f03)
+
+Keterangan:
+
+- Jumlah rekomendasi yang relevan: Jumlah item yang direkomendasikan oleh sistem yang benar-benar disukai atau dibutuhkan oleh pengguna.
+- Jumlah item yang direkomendasikan: Jumlah total item yang direkomendasikan oleh sistem kepada pengguna.
+
+Berdasarkan hasil rekomendasi anime Gintama di atas, dapat dihitung nilai precision (P) sebagai berikut:
+
+ **P = 5/5 = 1** 
+
+Ini berarti bahwa dari 5 item yang direkomendasikan, semua di antaranya relevan, sehingga presisi adalah 100%.
+
+Dengan demikian, tujuan dari pengembangan sistem rekomendasi anime menggunakan content-based filtering telah berhasil tercapai dengan baik.
