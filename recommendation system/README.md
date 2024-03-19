@@ -14,14 +14,15 @@ Urgensinya proyek ini terletak pada pentingnya memberikan rekomendasi yang relev
 
 Anime merupakan bentuk hiburan yang sangat populer di kalangan berbagai kelompok usia dan budaya. Dengan jumlah judul yang terus bertambah setiap tahunnya, pengguna sering kali mengalami kesulitan dalam menemukan anime yang sesuai dengan minat dan preferensi mereka. Oleh karena itu, pengembangan sistem rekomendasi anime dapat memberikan solusi untuk masalah tersebut dengan memberikan rekomendasi yang personal dan relevan kepada pengguna.
 
-# Business Understanding
+### Business Understanding
 
-### Problem Statement
+#### Problem Statement
 
-1. Bagaimana kita dapat memberikan rekomendasi anime yang lebih personal dan relevan kepada pengguna, sehingga mereka dapat dengan mudah menemukan anime yang sesuai dengan minat dan preferensi mereka?
-2. Apakah sistem rekomendasi anime ini dapat memberikan hasil dan presisi yang baik?
+1. Bagaimana menganalisis data anime dengan lebih mendalam?
+2. Bagaimana caranya untuk memberikan rekomendasi anime yang lebih personal dan relevan kepada pengguna, sehingga mereka dapat dengan mudah menemukan anime yang sesuai dengan minat dan preferensi mereka?
+3. Apakah sistem rekomendasi anime ini dapat memberikan hasil dan presisi yang baik?
 
-### Goals
+#### Goals
 
 1. Menganalisis dan mengekstrak fitur atau karakteristik dari anime, seperti genre, tema, dan rating.
 2. Membangun model yang dapat merekomendasikan anime berdasarkan kesamaan fitur dengan anime favorit pengguna.
@@ -33,14 +34,14 @@ Untuk mencapai tujuan proyek, langkah-langkah berikut akan dilakukan:
 
 1. **Analisis dan Ekstraksi Fitur Anime**:
    - Melakukan analisis data anime untuk mengidentifikasi fitur-fitur penting seperti genre, tema, dan rating.
-   - Mengekstrak fitur-fitur tersebut dari data anime untuk digunakan dalam pembangunan model.
+   - Fitur-fitur tersebut akan diekstrak dari data anime untuk digunakan dalam pembangunan model.
 
 2. **Pembangunan Model Rekomendasi**:
-   - Menggunakan teknik content-based filtering untuk membangun model rekomendasi.
+   - Teknik content-based filtering akan digunakan untuk membangun model rekomendasi.
    - Model akan mempertimbangkan kesamaan fitur antara anime yang disukai pengguna dan anime lainnya untuk memberikan rekomendasi yang relevan.
 
 3. **Evaluasi Model dengan Metrik Precision**:
-   - Menguji kinerja model yang dibangun menggunakan metrik precision.
+   - Kinerja model yang dibangun akan diuji menggunakan metrik precision.
    - Metrik ini akan mengukur seberapa akurat model dalam memberikan rekomendasi anime yang sesuai dengan preferensi pengguna.
 
 
