@@ -18,7 +18,7 @@ Anime merupakan bentuk hiburan yang sangat populer di kalangan berbagai kelompok
 
 #### Problem Statement
 
-1. Bagaimana menganalisis data anime dengan lebih mendalam?
+1. Bagaimana caranya untuk menganalisis data anime dengan lebih mendalam?
 2. Bagaimana caranya untuk memberikan rekomendasi anime yang lebih personal dan relevan kepada pengguna, sehingga mereka dapat dengan mudah menemukan anime yang sesuai dengan minat dan preferensi mereka?
 3. Apakah sistem rekomendasi anime ini dapat memberikan hasil dan presisi yang baik?
 
