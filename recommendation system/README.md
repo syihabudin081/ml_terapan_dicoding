@@ -1,44 +1,47 @@
 # Sistem Rekomendasi Anime Menggunakan Content-Based Filtering
 
-## Deskripsi Proyek
+## Ptoject Overview
 
 ![image](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/1c3081c5-0b81-4203-b2f6-069c13810770)
 
 Proyek ini bertujuan untuk mengembangkan sebuah sistem rekomendasi anime menggunakan metode content-based filtering. Sistem ini akan merekomendasikan anime kepada pengguna berdasarkan kesamaan konten atau fitur antara anime yang disukai oleh pengguna dengan anime lainnya. Dengan menggunakan teknik ini, sistem dapat merekomendasikan anime yang memiliki karakteristik atau elemen serupa dengan anime favorit pengguna.
 
-## Urgensi Permasalahan
+### Urgensi Permasalahan
 
 Urgensinya proyek ini terletak pada pentingnya memberikan rekomendasi yang relevan dan sesuai dengan minat pengguna. Dalam dunia hiburan seperti anime, di mana terdapat ribuan judul yang berbeda dengan berbagai genre dan tema, memiliki sistem rekomendasi yang efektif dapat membantu pengguna menemukan konten yang sesuai dengan preferensi mereka tanpa harus menghabiskan waktu untuk mencari secara manual.
 
-## Latar Belakang
+### Latar Belakang
 
 Anime merupakan bentuk hiburan yang sangat populer di kalangan berbagai kelompok usia dan budaya. Dengan jumlah judul yang terus bertambah setiap tahunnya, pengguna sering kali mengalami kesulitan dalam menemukan anime yang sesuai dengan minat dan preferensi mereka. Oleh karena itu, pengembangan sistem rekomendasi anime dapat memberikan solusi untuk masalah tersebut dengan memberikan rekomendasi yang personal dan relevan kepada pengguna.
 
-## Problem Statement
+## Business Understanding
 
-Dengan pertumbuhan yang pesat dalam jumlah judul anime yang tersedia, pengguna sering kali menghadapi kesulitan dalam menemukan anime yang sesuai dengan preferensi dan minat mereka. Masalah utama yang dihadapi adalah kurangnya rekomendasi yang personal dan relevan, yang dapat menyebabkan pengguna menghabiskan waktu berharga untuk mencari anime baru yang sesuai dengan selera mereka.
+### Problem Statement
 
-Selain itu, kebanyakan sistem rekomendasi yang tersedia cenderung mengandalkan data demografis pengguna atau perilaku interaksi sebelumnya, tanpa memperhitungkan karakteristik atau fitur konten dari anime yang disukai. Hal ini dapat menyebabkan rekomendasi yang kurang akurat dan kurang memuaskan bagi pengguna.
+1. Bagaimana kita dapat memberikan rekomendasi anime yang lebih personal dan relevan kepada pengguna, sehingga mereka dapat dengan mudah menemukan anime yang sesuai dengan minat dan preferensi mereka?
+2. Apakah sistem rekomendasi anime ini dapat memberikan hasil dan presisi yang baik?
 
-Oleh karena itu, diperlukan sebuah sistem rekomendasi anime yang dapat memberikan rekomendasi yang personal dan relevan kepada pengguna berdasarkan karakteristik atau fitur konten dari anime yang disukai oleh pengguna. Dengan demikian, pengguna akan lebih mudah menemukan anime baru yang sesuai dengan minat dan preferensi mereka, meningkatkan pengalaman hiburan mereka secara keseluruhan.
+### Goals
 
-## Goals
+1. Menganalisis dan mengekstrak fitur atau karakteristik dari anime, seperti genre, tema, dan rating.
+2. Membangun model yang dapat merekomendasikan anime berdasarkan kesamaan fitur dengan anime favorit pengguna.
+3. Menguji model yang dibangun dengan menggunakan metrik precision.
 
-1. Mengembangkan sistem rekomendasi anime yang menggunakan content-based filtering.
-2. Menganalisis dan mengekstrak fitur atau karakteristik dari anime, seperti genre, tema, dan rating.
-3. Membangun model yang dapat merekomendasikan anime berdasarkan kesamaan fitur dengan anime favorit pengguna.
-
-## Solusi
+### Solusi
 
 Untuk mencapai tujuan proyek, langkah-langkah berikut akan dilakukan:
 
-1. Pengumpulan Data: Mengumpulkan data tentang anime, termasuk informasi tentang genre, tema, rating, dan fitur lainnya.
-2. Eksplorasi Data (EDA): Menganalisis dan memahami data anime untuk mengidentifikasi pola, tren, dan karakteristik yang relevan.
-3. Pemrosesan Data: Membersihkan, mengubah, dan menormalkan data untuk persiapan pemodelan.
-4. Ekstraksi Fitur: Mengekstrak fitur-fitur penting dari data anime, seperti genre, tema, dan rating.
-5. Pembangunan Model: Menggunakan teknik content-based filtering untuk membangun model yang dapat merekomendasikan anime berdasarkan kesamaan fitur.
-6. Evaluasi Model: Menguji kinerja model menggunakan metrik evaluasi yang sesuai, seperti precision, recall, dan F1-score.
-7. Implementasi: Mengimplementasikan sistem rekomendasi dalam bentuk aplikasi atau platform yang dapat diakses oleh pengguna.
+1. **Analisis dan Ekstraksi Fitur Anime**:
+   - Melakukan analisis data anime untuk mengidentifikasi fitur-fitur penting seperti genre, tema, dan rating.
+   - Mengekstrak fitur-fitur tersebut dari data anime untuk digunakan dalam pembangunan model.
+
+2. **Pembangunan Model Rekomendasi**:
+   - Menggunakan teknik content-based filtering untuk membangun model rekomendasi.
+   - Model akan mempertimbangkan kesamaan fitur antara anime yang disukai pengguna dan anime lainnya untuk memberikan rekomendasi yang relevan.
+
+3. **Evaluasi Model dengan Metrik Precision**:
+   - Menguji kinerja model yang dibangun menggunakan metrik precision.
+   - Metrik ini akan mengukur seberapa akurat model dalam memberikan rekomendasi anime yang sesuai dengan preferensi pengguna.
 
 ## Referensi
 
