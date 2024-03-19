@@ -14,7 +14,7 @@ Urgensinya proyek ini terletak pada pentingnya memberikan rekomendasi yang relev
 
 Anime merupakan bentuk hiburan yang sangat populer di kalangan berbagai kelompok usia dan budaya. Dengan jumlah judul yang terus bertambah setiap tahunnya, pengguna sering kali mengalami kesulitan dalam menemukan anime yang sesuai dengan minat dan preferensi mereka. Oleh karena itu, pengembangan sistem rekomendasi anime dapat memberikan solusi untuk masalah tersebut dengan memberikan rekomendasi yang personal dan relevan kepada pengguna.
 
-## Business Understanding
+# Business Understanding
 
 ### Problem Statement
 
@@ -43,16 +43,8 @@ Untuk mencapai tujuan proyek, langkah-langkah berikut akan dilakukan:
    - Menguji kinerja model yang dibangun menggunakan metrik precision.
    - Metrik ini akan mengukur seberapa akurat model dalam memberikan rekomendasi anime yang sesuai dengan preferensi pengguna.
 
-## Referensi
 
-1. [MyAnimeList](https://myanimelist.net/)
-2. [Content-Based Filtering for Recommendation Systems - Towards Data Science](https://towardsdatascience.com/content-based-recommender-systems-28a1dbd858f5)
-3. [Building a Content-Based Movie Recommendation Engine - Real Python](https://realpython.com/build-recommendation-engine-collaborative-filtering/)
-4. [Introduction to Recommender Systems - Analytics Vidhya](https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-recommendation-engine-python/)
-5. [An Introduction to Anime and Why It's Worth Your Time - Collider](https://collider.com/what-is-anime-explained/)
-6. [Based Filtering Methods in Anime Recommendation Systems](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwihxPeZv_6EAxXy9zgGHZcZCMgQFnoECDUQAQ&url=https%3A%2F%2Fjournal.unimma.ac.id%2Findex.php%2Fkomtika%2Farticle%2Fdownload%2F9219%2F4657%2F&usg=AOvVaw2RL_6RvwrksuYvLzPw_Lb5&opi=89978449)
-
-## Data Understanding
+# Data Understanding
 Data yang digunakan adalah dataset  dengan judul [Anime Recommendations Database](https://colab.research.google.com/corgiredirector?site=https%3A%2F%2Fwww.kaggle.com%2Fdatasets%2FCooperUnion%2Fanime-recommendations-database) yang diambil dari kaggle 
 
 ### Dataset
@@ -200,9 +192,9 @@ Grafik tersebut menunjukkan distribusi rating dari anime.
 
 Grafik tersebut menampilkan distribusi jenis anime, di mana jenis TV paling banyak ditemui.
 
-### Data Preprocessing
+# Data Preparation
 
-# Count anime rating contribution
+### Count anime rating contribution
 
 |anime\_id|user\_id|rating|
 |---|---|---|
@@ -210,7 +202,7 @@ Grafik tersebut menampilkan distribusi jenis anime, di mana jenis TV paling bany
 |5|6927|6927|
 |6|11077|11077|
 
-# Menggabungkan table anime rating contribution dengan dataframe anime berdasarkan anime_id
+### Menggabungkan table anime rating contribution dengan dataframe anime berdasarkan anime_id
 
 |index|anime\_id|user\_id|rating|name|genre|
 |---|---|---|---|---|---|
@@ -224,8 +216,6 @@ Grafik tersebut menampilkan distribusi jenis anime, di mana jenis TV paling bany
 |7|17|650|650|Hungry Heart: Wild Striker|Comedy, Shounen, Slice of Life, Sports|
 |8|18|1911|1911|Initial D Fourth Stage|Action, Cars, Drama, Seinen, Sports|
 |9|19|4594|4594|Monster|Drama, Horror, Mystery, Police, Psychological, Seinen, Thriller|
-
-### Data Preparation
 
 Pada tahap ini, dilakukan proses pembersihan data (data cleaning) dengan menggunakan fungsi `dropna()` untuk menghapus baris yang mengandung nilai yang hilang (missing value) dari dataset. Tujuan dari langkah ini adalah untuk memastikan bahwa dataset yang digunakan dalam analisis selanjutnya bebas dari nilai yang hilang, sehingga tidak mempengaruhi hasil analisis.
 
@@ -315,11 +305,11 @@ Maka sistem akan merekomendasikan 5 anime yang mirip dengan Gintama:
 | 3     | Gintama: Yorinuki Gintama-san on Theater 2D   | Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen |
 | 4     | Gintama'                                       | Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen |
 
-### Evaluasi
+# Evaluasi
 
 Untuk evaluasi, menggunakan metrik precision yang dirumuskan sebagai berikut:
 
-![Presisi (P) = Jumlah rekomendasi yang relevan / Jumlah item yang direkomendasikan](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/664195d3-3a82-42a7-bc8a-ef2f36ac1f03)
+### Precision = (Jumlah Rekomendasi Relevan)/(Jumlah Item yang Direkomendasikan) 
 
 Keterangan:
 
@@ -333,3 +323,14 @@ Berdasarkan hasil rekomendasi anime Gintama di atas, dapat dihitung nilai precis
 Ini berarti bahwa dari 5 item yang direkomendasikan, semua di antaranya relevan, sehingga presisi adalah 100%.
 
 Dengan demikian, tujuan dari pengembangan sistem rekomendasi anime menggunakan content-based filtering telah berhasil tercapai dengan baik.
+
+
+## Referensi
+
+1. MyAnimeList. [Online]. Available: https://myanimelist.net/
+2. Vaughan, F. L. (2020, September 29). Content-Based Filtering for Recommendation Systems. Towards Data Science. https://towardsdatascience.com/content-based-recommender-systems-28a1dbd858f5
+3. Nakano, J., & Takahashi, K. (2023, February 20). Building a Content-Based Movie Recommendation Engine. Real Python. https://realpython.com/build-recommendation-engine-collaborative-filtering/
+4. Mehta, P. G., Agrawal, R., & Venkatasubramanian, S. (2018, June 12). Introduction to Recommender Systems. Analytics Vidhya. 5. https://www.analyticsvidhya.com/blog/2018/06/comprehensive-guide-recommendation-engine-python/
+6. Bradley, T. (2020, October 28). An Introduction to Anime and Why It’s Worth Your Time. Collider. https://collider.com/what-is-anime-explained/
+Ashfiya, L., & Yuniarti, E. (2020). Based Filtering Methods in Anime Recommendation Systems. Jurnal Komtika, 5(2), 131-140. [invalid URL removed]
+
