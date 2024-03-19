@@ -73,6 +73,10 @@ Dataset ini berisi informasi tentang preferensi pengguna dari 73.516 pengguna pa
 
 **Anime.csv**
 
+<div align="center">
+Tabel 1. Overview dataset anime.csv
+</div>
+
 |index|anime\_id|name|genre|type|episodes|rating|members|
 |---|---|---|---|---|---|---|---|
 |0|32281|Kimi no Na wa\.|Drama, Romance, School, Supernatural|Movie|1|9\.37|200630|
@@ -90,6 +94,11 @@ Dataset ini berisi informasi tentang preferensi pengguna dari 73.516 pengguna pa
 - `members`: jumlah anggota komunitas yang ada dalam "kelompok" anime ini.
 
 **Rating.csv**
+
+<div align="center">
+Tabel 2. Overview dataset rating csv
+</div>
+
 |index|user\_id|anime\_id|rating|
 |---|---|---|---|
 |0|1|20|-1|
@@ -132,6 +141,10 @@ Tahap exploratory data analysis dilakukan untuk memahami data yang digunakan dal
 
 **Anime.csv**
 
+<div align="center">
+Tabel 3. Distribusi data anime.csv
+</div>  
+
 |index|anime\_id|rating|members|
 |---|---|---|---|
 |count|12294\.0|12064\.0|12294\.0|
@@ -150,6 +163,10 @@ Tahap exploratory data analysis dilakukan untuk memahami data yang digunakan dal
 - **members**: Rata-rata jumlah anggota komunitas dalam "kelompok" anime adalah sekitar 18.071, dengan standar deviasi sekitar 54.820. Jumlah anggota berkisar dari 5 hingga 1.013.917.
   
 **Rating.csv**
+
+<div align="center">
+Tabel 4. Distribusi data rating.csv
+</div>  
 
 |index|user\_id|anime\_id|rating|
 |---|---|---|---|
@@ -170,31 +187,48 @@ Tahap exploratory data analysis dilakukan untuk memahami data yang digunakan dal
 
 **Top 10 Anime Genre**
 
-![Top 10 Anime Genre](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/80bb2943-33dd-45d9-9cab-860825fb72c3)
+<div align="center">
+  <img src="https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/80bb2943-33dd-45d9-9cab-860825fb72c3" alt="Top 10 Anime Genre">
+  <p>Gambar 1. Top 10 Genre Anime</p>
+</div>
+
 
 Grafik tersebut menampilkan 10 genre anime yang paling banyak ditemui.
 
 **Top 10 Anime berdasarkan Rata-Rata Rating**
 
-![Top 10 Anime berdasarkan Rata-Rata Rating](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/1181e5f7-bc09-4a3e-92e1-0aa0aab4b2c4)
+<div align="center">
+  <img src="https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/1181e5f7-bc09-4a3e-92e1-0aa0aab4b2c4" alt="Top 10 Anime Berdasarkan Rata-Rata Rating">
+  <p>Gambar 2. Top 10 Anime Berdasarkan rata-rata rating</p>
+</div>
 
 Menampilkan Top 10 Anime dengan rata-rata rating tertinggi, di mana "Taka no Tsume" memiliki rata-rata rating tertinggi.
 
 **Distribusi Rating Anime**
-
-![Distribusi Rating Anime](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/72dcbe14-e152-4644-b7c5-f8de7e82b080)
+<div align="center">
+  <img src="https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/72dcbe14-e152-4644-b7c5-f8de7e82b080" alt="Distribusi Rating Anime">
+  <p>Gambar 3. Distribusi Rating anime</p>
+</div>
 
 Grafik tersebut menunjukkan distribusi rating dari anime.
 
 **Distribusi Jenis Anime**
 
-![Distribusi Jenis Anime](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/4e2dce44-3443-4523-907f-b89ffdca4c74)
+<div align="center">
+  <img src="https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/4e2dce44-3443-4523-907f-b89ffdca4c74" alt="Distribusi Rating Anime">
+  <p>Gambar 4. Distribusi Jenis anime</p>
+</div>
+
 
 Grafik tersebut menampilkan distribusi jenis anime, di mana jenis TV paling banyak ditemui.
 
 # Data Preparation
 
 ### Count anime rating contribution
+
+<div align="center">
+Tabel 5. kontribusi rating anime
+</div>
 
 |anime\_id|user\_id|rating|
 |---|---|---|
@@ -203,6 +237,10 @@ Grafik tersebut menampilkan distribusi jenis anime, di mana jenis TV paling bany
 |6|11077|11077|
 
 ### Menggabungkan table anime rating contribution dengan dataframe anime berdasarkan anime_id
+
+<div align="center">
+Tabel 6. tabel hasil merge antara rating.csv dan anime.csv
+</div>  
 
 |index|anime\_id|user\_id|rating|name|genre|
 |---|---|---|---|---|---|
@@ -219,13 +257,21 @@ Grafik tersebut menampilkan distribusi jenis anime, di mana jenis TV paling bany
 
 Pada tahap ini, dilakukan proses pembersihan data (data cleaning) dengan menggunakan fungsi `dropna()` untuk menghapus baris yang mengandung nilai yang hilang (missing value) dari dataset. Tujuan dari langkah ini adalah untuk memastikan bahwa dataset yang digunakan dalam analisis selanjutnya bebas dari nilai yang hilang, sehingga tidak mempengaruhi hasil analisis.
 
-![Missing Value Handling](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/7cbf2998-25a0-4d43-ac84-9043171e4be4)
+<div align="center">
+  <img src="https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/7cbf2998-25a0-4d43-ac84-9043171e4be4" alt="Missing Value Handling">
+  <p>Gambar 5. Missing Value Handling</p>
+</div>
+
 
 Proses pembersihan ini diperlukan untuk memastikan keakuratan dan konsistensi data sebelum dilakukan analisis lebih lanjut. Dengan menghapus baris yang mengandung nilai yang hilang, dataset menjadi lebih bersih dan siap untuk digunakan dalam proses analisis dan pemodelan.
 
 ### Content Based Filtering Modelling & Result 
 
-![image](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/b6abcff9-a457-47ca-8cd4-15bbf851dd2d)
+<div align="center">
+  <img src="https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/e302bc8f-419f-4dc9-8a56-b4049dfec1b9">
+  <p>Gambar 6. Content Based Filtering</p>
+</div>
+
 
 Content-based filtering adalah salah satu metode dalam sistem rekomendasi yang menghasilkan rekomendasi berdasarkan kesamaan fitur atau konten antara item yang telah disukai oleh pengguna dengan item lainnya. Pendekatan ini menggunakan informasi terperinci tentang item itu sendiri untuk membuat rekomendasi yang sesuai dengan preferensi pengguna.
 
@@ -269,7 +315,22 @@ Pada tahap ini, TF-IDF (Term Frequency-Inverse Document Frequency) Vectorizer di
 
 3. **Membuat DataFrame**: Dibuatlah DataFrame untuk melihat matriks TF-IDF. Kolom DataFrame diisi dengan genre anime, sedangkan barisnya diisi dengan nama anime. Ini membantu untuk memvisualisasikan representasi TF-IDF untuk setiap anime.
 
-![TF-IDF Matrix](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/24a99da8-93c1-47e0-ac79-16e8b8544e74)
+<div align="center">
+  <p>Tabel 7. Dataframe TF-IDF</p>
+</div>
+
+|anime\_name|adventure|ai|magic|shounen|cars|horror|drama|comedy|hentai|yaoi|fantasy|of|action|ecchi|supernatural|life|space|samurai|super|mystery|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|Sheep in the Island|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|1\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|
+|Saikin, Imouto no Yousu ga Chotto Okashiinda ga\.|0\.0|0\.0|0\.0|0\.4139244457223737|0\.0|0\.0|0\.0|0\.28138674229986865|0\.0|0\.0|0\.0|0\.0|0\.0|0\.5582069951833066|0\.49479345484711246|0\.0|0\.0|0\.0|0\.0|0\.0|
+|Uju Heukgisa|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.38161910123227727|0\.0|0\.0|0\.0|0\.6968149223554001|0\.0|0\.0|0\.0|
+|Cookin&\#039; Idol Ai\! Mai\! Main\!|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.5289984351838201|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|
+|Toki-iro Kaima|0\.0|0\.0|0\.0|0\.5425262312642511|0\.0|0\.8400388612381027|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|
+|Beluga|0\.0|0\.0|0\.0|0\.0|0\.0|0\.6648388791469788|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|
+|Macross F Movie 1: Itsuwari no Utahime|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.24991864763907218|0\.0|0\.0|0\.0|0\.4563373334496427|0\.0|0\.0|0\.0|
+|Hitsugi no Chaika OVA|0\.46373730053581397|0\.0|0\.0|0\.5095198294817932|0\.0|0\.0|0\.0|0\.3463726929798887|0\.0|0\.0|0\.47112015170502103|0\.0|0\.4282627927708617|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|
+|Ooi\! Hanimaru|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|
+|Ranma ½: Totteoki Talk Best of Memories|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.0|0\.21536562651365765|0\.0|0\.0|0\.0|0\.3628453338600582|0\.0|0\.0|0\.0|0\.3628453338600582|0\.0|0\.0|0\.0|0\.0|
 
 ### Cosine Similarity
 
@@ -278,8 +339,23 @@ Pada tahap ini, dilakukan perhitungan derajat kesamaan (similarity degree) antar
 1. **Perhitungan Cosine Similarity**: Menggunakan fungsi `cosine_similarity` dari library sklearn untuk menghitung cosine similarity antara vektor representasi TF-IDF dari setiap pasang anime. Cosine similarity mengukur seberapa mirip dua vektor berdasarkan sudut kosinus di antara keduanya.
 
 2. **Rekomendasi Anime yang Mirip**: Dengan menggunakan data similarity yang diperoleh, direkomendasikan daftar anime yang memiliki kesamaan tertinggi dengan anime yang telah disukai oleh pengguna. Semakin tinggi nilai cosine similarity antara dua anime, semakin mirip kedua anime tersebut.
+   
+<div align="center">
+  <p>Tabel 8. Similiarity Matrix pada anime</p>
+</div>
 
-![Cosine Similarity](https://github.com/syihabudin081/ml_terapan_dicoding/assets/99803288/50cfd6b5-56b3-4b8d-a13d-c912d9371b16)
+|anime\_name|Shuukan Shimakou: Sono Toki, Shimakou ga Ugoita\!|Issunboushi \(OVA\)|Ginga Tetsudou 999: Hoshizora wa Time Machine|Hajimari no Boukensha-tachi: Legend of Crystania|Kikoushi Enma|
+|---|---|---|---|---|---|
+|Uchuu no Kishi Tekkaman Blade II|0\.0|0\.0|0\.5140333729917009|0\.20352848053240138|0\.0|
+|Inferno Cop: Fact Files|0\.3277258060281538|0\.0|0\.0|0\.1450885315667765|0\.0|
+|Nazo no Kanojo X|0\.0|0\.0|0\.0|0\.0|0\.42663091401515024|
+|Mobile Suit Gundam: The 08th MS Team - A Battle with the Third Dimension|0\.0|0\.0|0\.0|0\.14332081592418536|0\.0|
+|Heroman Specials|0\.0|0\.0|0\.5794932587668898|0\.16096895670502798|0\.0|
+|Momon&\#039;s Sand Witch Episode 0|0\.5289984351838202|0\.0|0\.0|0\.0|0\.0|
+|Wamono|0\.0|0\.0|0\.0|0\.0|0\.0|
+|Tobacco to Hai|0\.0|0\.0|0\.0|0\.38771931004185134|0\.0|
+|Juugo Shounen Hyouryuuki|0\.0|0\.0|0\.30577955907704507|0\.19001019200531571|0\.0|
+|Daikyouryuu Jidai|0\.0|0\.0|0\.8100043211350902|0\.0|0\.0|
 
 Dengan menggunakan TF-IDF Vectorizer dan Cosine Similarity, sistem rekomendasi anime yang sederhana namun efektif dapat dibangun berdasarkan genre anime yang disukai oleh pengguna. Metode ini memungkinkan untuk merekomendasikan anime yang memiliki kesamaan fitur dengan anime favorit pengguna, sehingga meningkatkan pengalaman pengguna dalam menemukan konten yang sesuai dengan preferensi mereka.
 
@@ -291,11 +367,19 @@ Setelah melakukan perhitungan similarity antar anime menggunakan cosine similari
 
 Sebagai contoh, kita ingin mendapatkan rekomendasi terkait dengan anime yang mirip dengan Gintama:
 
+<div align="center">
+  <p>Tabel 9. Lihat Fitur anime Gintama</p>
+</div>
+
 | Index | ID   | Anime Name                              | Genre                                            |
 |-------|------|-----------------------------------------|--------------------------------------------------|
 | 9832  | 28977| Gintama°                                | Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen |
 
 Maka sistem akan merekomendasikan 5 anime yang mirip dengan Gintama:
+
+<div align="center">
+  <p>Tabel 10. Hasil Sistem Rekomendasi Gintama</p>
+</div>
 
 | Index | Anime Name                                     | Genre                                            |
 |-------|------------------------------------------------|--------------------------------------------------|
@@ -309,7 +393,7 @@ Maka sistem akan merekomendasikan 5 anime yang mirip dengan Gintama:
 
 Untuk evaluasi, menggunakan metrik precision yang dirumuskan sebagai berikut:
 
-### Precision = (Jumlah Rekomendasi Relevan)/(Jumlah Item yang Direkomendasikan) 
+### Precision = (Jumlah Rekomendasi Relevan) / (Jumlah Item yang Direkomendasikan) 
 
 Keterangan:
 
